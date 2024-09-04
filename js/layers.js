@@ -29,7 +29,9 @@ addLayer("m", {
 		11: {
 	        title: "Get More Scrap",
                 description: "More scrap.",
-		cost: new Decimal(1)
+		cost: new Decimal(1),
+	        effect() {
+                  return player[this.layer].points.add(1).pow(1.5)
 		}
 	}
 })

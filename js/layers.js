@@ -6,7 +6,7 @@ addLayer("m", {
         unlocked: true,
 		points: new Decimal(0),
     }},
-    color: "#4BDC13",
+    color: "#aaaaaa",
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "magnets", // Name of prestige currency
     baseResource: "scrap", // Name of resource prestige is based on
@@ -24,11 +24,12 @@ addLayer("m", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){
-	    return true},
-upgrades: {
-	rows: 2,
-        cols: 2,
-	11: {
-		title
+    layerShown(){return true},
+	upgrades: {
+		11: {
+	        title: "Get More Scrap",
+                description: "More scrap.",
+		cost: new Decimal(1)
+		}
+	}
 })

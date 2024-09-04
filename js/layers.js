@@ -30,6 +30,10 @@ addLayer("m", {
 	        title: "Get More Scrap",
                 description: "More scrap.",
 		cost: new Decimal(1),
+		effect() {
+                   return player[this.layer].points.add(1).pow(0.5)
+                },
+                effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
 		},
 		12: {
                 title: "x3 Scrap",

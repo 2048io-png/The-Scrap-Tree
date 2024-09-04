@@ -30,6 +30,21 @@ addLayer("m", {
 	        title: "Get More Scrap",
                 description: "More scrap.",
 		cost: new Decimal(1),
+		},
+		12: {
+                title: "x3 Scrap",
+		description: "x3 more scrap.",
+		cost: new Decimal(10),
+		},
+		13: {
+		title: "Get More Scrap (x20)",
+		description: "x20 more scrap.",
+		cost: new Decimal(50),
+		},
+		14: {
+		title: "Golden Scrap",
+		description: "Unlock Golden Scrap.",
+		cost: new Decimal(200)
 		}
 	}
 })

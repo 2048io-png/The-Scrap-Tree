@@ -64,7 +64,7 @@ addLayer("g", {
 		points: new Decimal(0),
     }},
     color: "gold",
-    requires: new Decimal(200), // Can be a function that takes requirement increases into account
+    requires: new Decimal(5000), // Can be a function that takes requirement increases into account
     resource: "golden scrap", // Name of prestige currency
     branches: ["m"],
     baseResource: "scrap", // Name of resource prestige is based on
@@ -83,4 +83,11 @@ addLayer("g", {
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){return hasUpgrade("m",14)||player.g.unlocked},
+	upgrades: {
+		11: {
+		title: "Welcome to Row 2!",
+		description: "x10 scrap gain!",
+		cost: new Decimal(2)
+		}
+	}
 })

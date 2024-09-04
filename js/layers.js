@@ -35,16 +35,19 @@ addLayer("m", {
                 title: "x3 Scrap",
 		description: "x3 more scrap.",
 		cost: new Decimal(10),
+		unlocked() {return hasUpgrade(this.layer,11)},
 		},
 		13: {
 		title: "Get More Scrap (x20)",
 		description: "x20 more scrap.",
 		cost: new Decimal(50),
+		unlocked() {return hasUpgrade(this.layer,12)},
 		},
 		14: {
 		title: "Golden Scrap",
 		description: "Unlock Golden Scrap.",
-		cost: new Decimal(200)
+		cost: new Decimal(200),
+		unlocked() {return hasUpgrade(this.layer,13)},
 		}
 	}
 })

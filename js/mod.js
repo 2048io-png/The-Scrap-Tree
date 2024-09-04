@@ -1,5 +1,5 @@
 let modInfo = {
-	name: "The Scrap Tree",
+	name: "The Scrap Clicker Tree",
 	id: "mymod",
 	author: "omegamod",
 	pointsName: "scrap",
@@ -46,6 +46,7 @@ function getPointGen() {
 	if (hasUpgrade('m', 11)) gain = gain.times(upgradeEffect('m', 11))
         if (hasUpgrade('m', 12)) gain = gain.times(3)
 	if (hasUpgrade('m', 13)) gain = gain.times(20)
+	if (hasUpgrade('g', 11)) gain = gain.times(10)
 	return gain
 }
 

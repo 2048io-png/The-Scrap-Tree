@@ -97,7 +97,7 @@ addLayer("g", {
                    return player[this.layer].points.add(1).pow(1)
                 },
                 effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
-		unlocked() {return hasUpgrade(this.layer,13)},
+		unlocked() {return hasUpgrade(this.layer,11)},
 		}
 	}
 })

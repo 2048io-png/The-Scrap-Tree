@@ -63,7 +63,7 @@ addLayer("g", {
         unlocked: false,
 		points: new Decimal(0),
     }},
-    color: "gold",
+    color: "#ffaa00",
     requires: new Decimal(5000), // Can be a function that takes requirement increases into account
     resource: "golden scrap", // Name of prestige currency
     branches: ["m"],
@@ -88,6 +88,16 @@ addLayer("g", {
 		title: "Welcome to Row 2!",
 		description: "x10 scrap gain!",
 		cost: new Decimal(2)
+		},
+		12: {
+                title: "GS Booster",
+		description: "Gain Scrap.",
+		cost: new Decimal(10),
+		effect() {
+                   return player[this.layer].points.add(1).pow(1)
+                },
+                effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
+		unlocked() {return hasUpgrade(this.layer,13)},
 		}
 	}
 })

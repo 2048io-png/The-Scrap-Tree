@@ -56,7 +56,7 @@ addLayer("m", {
 	}
 	passiveGeneration() {
 	if (hasMilestone("g",1)) return 1
-}
+    }
 })
 addLayer("g", {
     name: "golden scrap", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -117,9 +117,9 @@ addLayer("g", {
     },
 	update(diff){
 		if (hasMilestone(this.layer, 0))
-			player.m.upgrades(push)(11)
-		        player.m.upgrades(push)(12)
-		        player.m.upgrades(push)(13)
-		        player.m.upgrades(push)(14)
+			player.m.upgrades.push(11)
+		        player.m.upgrades.push(12)
+		        player.m.upgrades.push(13)
+		        player.m.upgrades.push(14)
 	},
 })

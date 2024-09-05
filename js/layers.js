@@ -54,6 +54,9 @@ addLayer("m", {
 		unlocked() {return hasUpgrade(this.layer,13)},
 		}
 	}
+	passiveGeneration() {
+	if (hasMilestone("g",1)) return 1
+}
 })
 addLayer("g", {
     name: "golden scrap", // This is optional, only used in a few places, If absent it just uses the layer id.
@@ -99,5 +102,24 @@ addLayer("g", {
                 effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
 		unlocked() {return hasUpgrade(this.layer,11)},
 		}
-	}
+	},
+        milestones: {
+	0: {
+		requirementDescription: "200 golden scrap",
+		effectDescription: "Keep all magnet upgrades",
+		done() { return player.g.points.gte(200) }
+	},
+	1: {
+		requirementDescription: "5,000 golden scrap",
+		effectDescription: "You get passive 100% gain of Magnets.",
+		done() { return.player.g.points.gte(5000) }
+	},
+    },
+	update(diff){
+		if (hasMilestone(this.layer, 0))
+			player.m.upgrades(push)(11)
+		        player.m.upgrades(push)(12)
+		        player.m.upgrades(push)(13)
+		        player.m.upgrades(push)(14)
+	},
 })

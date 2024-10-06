@@ -112,7 +112,7 @@ addLayer("g", {
 	1: {
 		requirementDescription: "5,000 golden scrap",
 		effectDescription: "You get passive 100% gain of Magnets.",
-		done() { return.player.g.points.gte(5000) }
+		done() { return player.g.points.gte(5000) }
 	},
     },
 	update(diff){
